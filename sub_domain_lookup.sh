@@ -14,7 +14,7 @@ lookup_domain() {
 		test_domain=$(echo $sub_domain|sed "s/$/\.$domain/g")
 
 		# perform DNS lookup and only print resolved subdomains
-		host $test_domain $dns_server|
+		host -W 1 $test_domain $dns_server|
 		grep 'has address'|
 		awk {'print $1,$4'}
 	done 
