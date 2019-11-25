@@ -3,7 +3,7 @@
 
 lookup_domain() {
 	# read to memory a file of subdomain nouns
-	sub_domains=$(cat common_sub_domains.txt)
+	sub_domains=$(cat sub_domains.txt)
 	dns_server=$(get_dns_server)
 	echo "$sub_domains"|
 	while read sub_domain; do
